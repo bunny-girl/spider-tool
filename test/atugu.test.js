@@ -3,22 +3,15 @@
  */
 "use strict";
 
-const atugu = require('../adapter/atugu'),
-	Downloader = require('../lib/Downloader'),
-	os = require('os');
+const Atugu = require('../adapter/atugu');
 
-let url = "http://www.atugu.com/pics/show/22084";
 
-atugu.getImages(url, (err, res) => {
-	if (err) {
-		console.log(`Error : ${err}`);
-		return;
+// new Atugu().downloadImagesByConf().then(v => {
+// 	console.log('finished!');
+// });
+
+Atugu.getImages('http://www.atugu.com/pics/show/22283').then(
+	v => {
+		console.log(v);
 	}
-
-	Downloader.downByArray(res.pics.large, `${os.homedir()}/data/atugu/${res.title}/`).then(() => {
-		console.log('done');
-	}).catch(err => {
-		console.log(err);
-	});
-
-});
+);
