@@ -1,0 +1,32 @@
+{
+  "name": "spider-tool",
+  "version": "0.0.1",
+  "description": "Spider tools for some webpages",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node ./test/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bunny-girl/spider-tool.git"
+  },
+  "keywords": [
+    "spider"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bunny-girl/spider-tool/issues"
+  },
+  "homepage": "https://github.com/bunny-girl/spider-tool#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "download": "^6.2.5",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
