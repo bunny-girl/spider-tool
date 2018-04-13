@@ -3,3 +3,4 @@
  */
 
 require('./atugu.test');
+require('./1024.test');
