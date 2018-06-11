@@ -3,15 +3,13 @@
  */
 "use strict";
 
-const Atugu = require('../adapter/atugu');
+const Query = require('../lib/Query');
 
-
-// new Atugu().downloadImagesByConf().then(v => {
-// 	console.log('finished!');
-// });
-
-Atugu.getImages('http://www.atugu.com/pics/show/22283').then(
-	v => {
-		console.log(v);
-	}
-);
+Query
+	.deal('http://www.atugu.com/pics/show/23026')
+	.then(res => {
+		console.log(res);
+	})
+	.catch(err => {
+		console.log(err);
+	});
