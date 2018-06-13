@@ -27,11 +27,11 @@ const handle = (link, $) => {
 		publishTime: new Date(getPlainVal('date')) || null,
 		duration: parseInt(getPlainVal('length')) || 0,
 		director: getLinkVal('director').text,
-		directorId: getLinkVal('director').link.replace('vl_director.php?d=', ''),
+		directorId: (getLinkVal('director').link || '').replace('vl_director.php?d=', ''),
 		company: getLinkVal('maker').text,
-		companyId: getLinkVal('maker').link.replace('vl_maker.php?m=', ''),
+		companyId: (getLinkVal('maker').link || '').replace('vl_maker.php?m=', ''),
 		publisher: getLinkVal('label').text,
-		publisherId: getLinkVal('label').link.replace('vl_label.php?l=', ''),
+		publisherId: (getLinkVal('label').link || '').replace('vl_label.php?l=', ''),
 		vote: parseInt($(`#video_review .text input[checked='checked']`).eq(0).val()) || 0,
 		tags: [],
 		actors: [],
@@ -42,18 +42,18 @@ const handle = (link, $) => {
 		let link = $(tag).find('a').eq(0);
 		res.tags.push({
 			name : link.text(),
-			id : link.attr('href').replace('vl_genre.php?g=', ''),
+			id : (link.attr('href') || '').replace('vl_genre.php?g=', ''),
 		})
-	})
+	});
 
 	let actors = $("#video_cast .cast");
 	actors.each((index, actor) => {
 		let link = $(actor).find('a').eq(0);
 		res.actors.push({
 			name : link.text(),
-			id : link.attr('href').replace('vl_star.php?s=', ''),
+			id : (link.attr('href') || '').replace('vl_star.php?s=', ''),
 		})
-	})
+	});
 
 	return res;
 };
