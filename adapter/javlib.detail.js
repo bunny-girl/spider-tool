@@ -1,50 +1,59 @@
 "use strict";
-const URL = require('url');
+const url = require('url');
 
 const pattern = /javlibrary\.com\/cn\/\?v=/;
 
-const handle = (url, $) => {
-	console.log(`Analyzing ${url}`);
+const handle = (link, $) => {
+	console.log(`Analyzing ${link}`);
+
+	const getPlainVal = str => ($(`#video_${str} .text`).eq(0).text())
+
+	const getLinkVal = str => {
+		let node = $(`#video_${str} .text a`).eq(0);
+		return {
+			text : node.text(),
+			link : node.attr('href'),
+		}
+	}
 
 	let res = {
-		url,
-		title: '',
-		code: '',
-		link: '',
-		image: '',
+		url: link,
+		title: $("#video_title a").eq(0).text(),
+		code: getPlainVal('id') || '',
+		link,
+		image: $('#video_jacket_img').attr('src'),
 		thumbnail: '',
-		id: '',
-		publishTime: '',
-		duration: '',
-		director: '',
-		directorId: '',
-		company: '',
-		companyId: '',
-		publisher: '',
-		publisherId: '',
-		vote: '',
-		tag: [],
-		actor: [],
+		id: new URL(link).searchParams.get('v'),
+		publishTime: new Date(getPlainVal('date')) || null,
+		duration: parseInt(getPlainVal('length')) || 0,
+		director: getLinkVal('director').text,
+		directorId: getLinkVal('director').link.replace('vl_director.php?d=', ''),
+		company: getLinkVal('maker').text,
+		companyId: getLinkVal('maker').link.replace('vl_maker.php?m=', ''),
+		publisher: getLinkVal('label').text,
+		publisherId: getLinkVal('label').link.replace('vl_label.php?l=', ''),
+		vote: parseInt($(`#video_review .text input[checked='checked']`).eq(0).val()) || 0,
+		tags: [],
+		actors: [],
 	};
 
-	let info = $('div#vidoe_info');
+	let tags = $("#video_genres .genre");
+	tags.each((index, tag) => {
+		let link = $(tag).find('a').eq(0);
+		res.tags.push({
+			name : link.text(),
+			id : link.attr('href').replace('vl_genre.php?g=', ''),
+		})
+	})
 
-	console.log(info.find('#video_id td:eq(2)').text());
-
-	// $('div.video').each((index, video) => {
-	// 	let link = $(video).find('a').eq(0);
-	// 	let imgBlock = link.find('img').eq(0);
-	// 	let codeBlock = link.find('div').eq(0);
-	// 	let obj = {
-	// 		title: link.attr('title'),
-	// 		link: URL.resolve(url, link.attr('href')),
-	// 		image: imgBlock.attr('src'),
-	// 		id: $(video).attr('id'),
-	// 		code: codeBlock.text(),
-	// 	};
-	//
-	// 	res.items.push(obj);
-	// });
+	let actors = $("#video_cast .cast");
+	actors.each((index, actor) => {
+		let link = $(actor).find('a').eq(0);
+		res.actors.push({
+			name : link.text(),
+			id : link.attr('href').replace('vl_star.php?s=', ''),
+		})
+	})
 
 	return res;
 };
