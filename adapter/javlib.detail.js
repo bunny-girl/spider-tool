@@ -2,6 +2,7 @@
 const url = require('url');
 
 const pattern = /javlibrary\.com\/cn\/\?v=/;
+const ADAPTER_NAME = 'JAV Lib Detail';
 
 const handle = (link, $) => {
 	console.log(`Analyzing ${link}`);
@@ -17,6 +18,7 @@ const handle = (link, $) => {
 	};
 
 	let res = {
+		adapterType : ADAPTER_NAME,
 		url: link,
 		title: $("#video_title a").eq(0).text(),
 		code: getPlainVal('id') || '',
@@ -59,7 +61,7 @@ const handle = (link, $) => {
 };
 
 module.exports = {
-	name: 'JAV Lib Detail',
+	name: ADAPTER_NAME,
 	pattern,
 	handle,
 };

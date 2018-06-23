@@ -1,11 +1,13 @@
 "use strict";
 
 const pattern = /ppmsg/;
+const ADAPTER_NAME = 'PPMSG Detail';
 
 const handle = (url, $) => {
 	console.log(`Analyzing ${url}`);
 
 	let res = {
+		adapterType : ADAPTER_NAME,
 		title: '',
 		pics: [],
 		url,
@@ -26,7 +28,7 @@ const handle = (url, $) => {
 };
 
 module.exports = {
-	name : 'PPMSG Detail',
+	name : ADAPTER_NAME,
 	pattern,
 	handle,
 };

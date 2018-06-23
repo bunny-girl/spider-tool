@@ -2,11 +2,13 @@
 const URL = require('url');
 
 const pattern = /vl_newrelease\.php/;
+const ADAPTER_NAME = 'JAV Lib New Release';
 
 const handle = (url, $) => {
 	console.log(`Analyzing ${url}`);
 
 	let res = {
+		adapterType : ADAPTER_NAME,
 		url,
 		items: [],
 		next: URL.resolve(url, $('.page.next').attr('href')),
@@ -31,7 +33,7 @@ const handle = (url, $) => {
 };
 
 module.exports = {
-	name: 'JAV Lib New Release',
+	name: ADAPTER_NAME,
 	pattern,
 	handle,
 };

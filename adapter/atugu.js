@@ -4,11 +4,13 @@
 "use strict";
 
 const pattern = /http:\/\/www\.atugu\.com\/pics\/show/;
+const ADAPTER_NAME = 'Atugu Detail';
 
 const handle = (url, $) => {
 	console.log(`Analyzing ${url}`);
 
 	let res = {
+		adapterType : ADAPTER_NAME,
 		title: '',
 		pics: {
 			medium: [],
@@ -34,7 +36,7 @@ const handle = (url, $) => {
 };
 
 module.exports = {
-	name : 'Atugu Detail',
+	name : ADAPTER_NAME,
 	pattern,
 	handle,
 };
