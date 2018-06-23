@@ -22,7 +22,7 @@ const handle = (url, $) => {
 	res.next = $('ul.image a').last().attr('href');
 
 	imgArr.each((index, img) => {
-		res.pics.push($(img).attr('src'));
+		res.pics.push($(img).attr('src').replace('\n', ''));
 	});
 
 	res.thumbnails = res.pics;
