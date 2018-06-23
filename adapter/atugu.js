@@ -12,11 +12,10 @@ const handle = (url, $) => {
 	let res = {
 		adapterType : ADAPTER_NAME,
 		title: '',
-		pics: {
-			medium: [],
-			large: []
-		},
-		url
+		thumbnails : [],
+		pics: [],
+		url,
+		next : '',
 	};
 
 	res.title = $('strong', '#infoTitle.panel-heading.breakline').text();
@@ -25,11 +24,11 @@ const handle = (url, $) => {
 		imgArr = $('img', "#pic_show_list");
 
 	linkArr.each((index, link) => {
-		res.pics.large.push($(link).attr('href'));
+		res.pics.push($(link).attr('href'));
 	});
 
 	imgArr.each((index, img) => {
-		res.pics.medium.push($(img).attr('src'));
+		res.thumbnails.push($(img).attr('src'));
 	});
 
 	return res;

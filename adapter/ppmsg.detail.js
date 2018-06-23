@@ -10,6 +10,7 @@ const handle = (url, $) => {
 		adapterType : ADAPTER_NAME,
 		title: '',
 		pics: [],
+		thumbnails : [],
 		url,
 		next : '',
 	};
