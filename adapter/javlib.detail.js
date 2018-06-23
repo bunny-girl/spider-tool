@@ -14,7 +14,7 @@ const handle = (link, $) => {
 			text : node.text(),
 			link : node.attr('href'),
 		}
-	}
+	};
 
 	let res = {
 		url: link,
