@@ -25,6 +25,8 @@ const handle = (url, $) => {
 		res.pics.push($(img).attr('src'));
 	});
 
+	res.thumbnails = res.pics;
+
 	return res;
 };
 
