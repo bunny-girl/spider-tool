@@ -29,6 +29,7 @@
     "download": "^6.2.5",
     "iconv-lite": "^0.4.23",
     "js-yaml": "^3.11.0",
+    "markdown-it": "^8.4.1",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5"
   },
