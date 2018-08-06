@@ -1,6 +1,6 @@
 "use strict";
 
-const pattern = /josephyzhou\/github-trending/;
+const pattern = /github-trending/;
 const ADAPTER_NAME = 'Github Trending';
 
 const md = require('markdown-it')();
