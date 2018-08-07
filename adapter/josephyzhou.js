@@ -19,7 +19,7 @@ const handle = (url, body) => {
 		let text = md.render(body.text());
 		let $ = cheerio.load(text);
 
-		let date = $("h3").first().text();
+		let date = $("h2").first().text();
 		res.date = new Date(date);
 
 		let typeArr = $('h4').map(function(i, el){
