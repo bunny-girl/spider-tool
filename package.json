@@ -1,7 +1,7 @@
 {
-  "name": "spider-tool",
+  "name": "spider-adapters",
   "version": "0.0.1",
-  "description": "Spider tools for some webpages",
+  "description": "\uD83D\uDD77️ Adapter for spiders, using Cheerio to parse HTML response. ",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/bunny-girl/spider-tool.git"
   },
   "keywords": [
-    "spider"
+    "spider crawler adapter"
   ],
   "author": "",
   "license": "MIT",

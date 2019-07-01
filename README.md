@@ -9,7 +9,7 @@ List for existing adapters:
 - [PPMSG](./adapter/ppmsg.detail.js)
 
 - - -
-How to create your own one?
+How to create your own one?  
 如何创建你自己的适配器？
 
 Add a file (any name is acceptable), in [`/adapter/`](./adapter/) folder. Define its name and pattern, then define a handler function. Pass these to [`Adapter`](./lib/Adapter.js) class, then you got it.  
