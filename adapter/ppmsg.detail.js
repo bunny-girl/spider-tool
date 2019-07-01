@@ -1,17 +1,15 @@
 "use strict";
 
+const Adapter = require('../lib/Adapter');
+
 const pattern = /ppmsg/;
 const ADAPTER_NAME = 'PPMSG Detail';
 
 const handle = (url, $) => {
-	console.log(`Analyzing ${url}`);
-
 	let res = {
-		adapterType : ADAPTER_NAME,
 		title: '',
 		pics: [],
 		thumbnails : [],
-		url,
 		next : '',
 	};
 
@@ -30,8 +28,4 @@ const handle = (url, $) => {
 	return res;
 };
 
-module.exports = {
-	name : ADAPTER_NAME,
-	pattern,
-	handle,
-};
+module.exports = new Adapter(ADAPTER_NAME, pattern, handle);
