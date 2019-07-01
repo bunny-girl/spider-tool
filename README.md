@@ -1,4 +1,4 @@
-# spider-tool
+# Spider Adapters
 Adapter for spiders.  
 - - -
 
