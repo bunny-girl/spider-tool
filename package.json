@@ -1,7 +1,7 @@
 {
   "name": "spider-adapters",
   "version": "0.0.1",
-  "description": "\uD83D\uDD77️ Adapter for spiders, using Cheerio to parse HTML response. ",
+  "description": "🕷️ Adapter for spiders, using Cheerio to parse HTML response. ",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -25,13 +25,13 @@
   },
   "homepage": "https://github.com/bunny-girl/spider-tool#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
+    "cheerio": "^1.0.0-rc.3",
     "download": "^6.2.5",
-    "iconv-lite": "^0.4.23",
-    "js-yaml": "^3.11.0",
-    "markdown-it": "^8.4.1",
-    "request": "^2.87.0",
-    "request-promise-native": "^1.0.5"
+    "iconv-lite": "^0.4.24",
+    "js-yaml": "^3.13.1",
+    "markdown-it": "^8.4.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
   },
   "engines": {
     "node": "~8.10.0"
