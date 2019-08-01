@@ -7,6 +7,7 @@ List for existing adapters:
 已有适配器列表：
 - [Github Trending](./adapter/github_trend.js)
 - [PPMSG](./adapter/ppmsg.detail.js)
+- [Yandere](./adapter/yandere.detail.js)
 
 - - -
 How to create your own one?  
