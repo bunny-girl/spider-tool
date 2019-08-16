@@ -1,7 +1,5 @@
 "use strict";
 
-const $ = require('cheerio');
-
 const Adapter = require('../lib/Adapter');
 const {toNumber} = require('../lib/util');
 
