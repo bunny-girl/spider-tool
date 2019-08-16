@@ -2,7 +2,6 @@
 🕷️ Adapter for spiders, using [Cheerio](https://www.npmjs.com/package/cheerio) to parse HTML response.  
 [[中文版]](./README_CN.md)  |  [NPM](https://www.npmjs.com/package/spider-adapters)
 - - -
-- - -
 How to install?
 
 ```shell script
