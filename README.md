@@ -1,18 +1,45 @@
 # Spider Adapters
 🕷️ Adapter for spiders, using [Cheerio](https://www.npmjs.com/package/cheerio) to parse HTML response.  
-泛用型爬虫适配器，使用 [Cheerio](https://www.npmjs.com/package/cheerio) 进行 HTML 返回内容的解析。
+[[中文版]](./README_CN.md)  |  [NPM](https://www.npmjs.com/package/spider-adapters)
 - - -
+How to install?
 
+```shell script
+npm i spider-adapters
+```
+- - -
+How to use?
+
+```$javascript
+//My testing code in test/index.js
+const adapters = require('spider-adapters');
+
+let links = [
+    'https://github.com/trending/',
+];
+
+links.map(async link => {
+    let data = await adapters.deal(link);
+    console.log(data);
+});
+```
+Or simply use it as:
+```$javascript
+let source = 'https://github.com/trending/';
+let data = require('spider-adapters').deal(link)
+```
+- - -
 List for existing adapters:
-已有适配器列表：
 - [Github Trending](./adapter/github_trend.js)
+<<<<<<< HEAD
 - [PPMSG](./adapter/ppmsg.detail.js)
 - Yandere [List](./adapter/yandere.list.js) & [Detail](./adapter/yandere.detail.js)
+=======
+- [Yandere](./adapter/yandere.detail.js)
+- [CNBeta](./adapter/cnbeta.list.js)
+>>>>>>> 354973cbb8af586a0e9d58648af8ec0ae48906c7
 
 - - -
 How to create your own one?  
-如何创建你自己的适配器？
 
 Add a file (any name is acceptable), in [`/adapter/`](./adapter/) folder. Define its name and pattern, then define a handler function. Pass these to [`Adapter`](./lib/Adapter.js) class, then you got it.  
-在 [`/adapter/`](./adapter/) 文件夹下创建一个文件。定义它的名字和匹配正则
-，然后定义一个 handler 函数。将这些传给 Adapter 类。搞定。
