@@ -31,13 +31,9 @@ let data = require('spider-adapters').deal(link)
 - - -
 List for existing adapters:
 - [Github Trending](./adapter/github_trend.js)
-<<<<<<< HEAD
 - [PPMSG](./adapter/ppmsg.detail.js)
 - Yandere [List](./adapter/yandere.list.js) & [Detail](./adapter/yandere.detail.js)
-=======
-- [Yandere](./adapter/yandere.detail.js)
 - [CNBeta](./adapter/cnbeta.list.js)
->>>>>>> 354973cbb8af586a0e9d58648af8ec0ae48906c7
 
 - - -
 How to create your own one?  
