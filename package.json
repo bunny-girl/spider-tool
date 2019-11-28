@@ -1,6 +1,6 @@
 {
   "name": "spider-adapters",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "🕷️ Adapter for spiders, using Cheerio to parse HTML response. ",
   "main": "index.js",
   "directories": {
